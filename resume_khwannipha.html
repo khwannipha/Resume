@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume – ขวัญนิภา กอบสุขถาวรกุล</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+  :root {
+    --cream:     #FAF0E6;
+    --blush:     #F2D5C0;
+    --peach:     #E8B89A;
+    --terracotta:#C47A5A;
+    --brown:     #6B3F2A;
+    --dark:      #3A1F10;
+    --muted:     #9E7060;
+    --card-bg:   #FDF6EE;
+    --border:    #E8CEBC;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    font-family: 'Sarabun', sans-serif;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 40px 48px;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* decorative blobs */
+  .page::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #F2D5C0cc 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .page::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #E8B89A88 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-left {}
+
+  .name-th {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 2px;
+  }
+
+  .name-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--dark);
+    line-height: 1.05;
+    margin-bottom: 6px;
+  }
+
+  .title-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--brown);
+    color: var(--cream);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 99px;
+    margin-bottom: 14px;
+  }
+
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .contact-item i { font-size: 13px; color: var(--terracotta); }
+
+  .header-seek {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .seek-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--blush);
+    border: 1px solid var(--peach);
+    color: var(--brown);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 8px;
+  }
+
+  .seek-badge i { font-size: 13px; }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, var(--peach), transparent);
+    margin: 18px 0;
+  }
+
+  /* ─── LAYOUT ─── */
+  .body {
+    display: grid;
+    grid-template-columns: 188px 1fr;
+    gap: 28px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 10px;
+    margin-top: 18px;
+  }
+
+  .section-label:first-child { margin-top: 0; }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ─── LEFT COL ─── */
+  .edu-block { margin-bottom: 4px; }
+  .edu-school { font-size: 12px; font-weight: 700; color: var(--dark); }
+  .edu-sub { font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .edu-year {
+    font-size: 10px;
+    color: var(--cream);
+    background: var(--terracotta);
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 4px;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+
+  .skill-group { margin-bottom: 10px; }
+
+  .skill-group-title {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+
+  .tag {
+    font-size: 10px;
+    padding: 2px 9px;
+    border-radius: 99px;
+    background: var(--blush);
+    border: 1px solid var(--peach);
+    color: var(--brown);
+    font-weight: 500;
+  }
+
+  .lang-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11.5px;
+    margin-bottom: 5px;
+    color: var(--dark);
+  }
+
+  .lang-badge {
+    font-size: 10px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 1px 8px;
+    border-radius: 4px;
+  }
+
+  /* ─── RIGHT COL ─── */
+  .objective-box {
+    background: var(--card-bg);
+    border-left: 3px solid var(--terracotta);
+    border-radius: 0 10px 10px 0;
+    padding: 12px 14px;
+    font-size: 11.5px;
+    line-height: 1.75;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  /* pipeline */
+  .pipeline-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+
+  .pipe-step {
+    font-size: 9.5px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 6px;
+    background: var(--blush);
+    border: 1px solid var(--peach);
+    color: var(--brown);
+  }
+
+  .pipe-arrow { font-size: 11px; color: var(--peach); }
+
+  /* project cards */
+  .proj-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 11px 14px;
+    margin-bottom: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .proj-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    border-radius: 4px 0 0 4px;
+    background: var(--peach);
+  }
+
+  .proj-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  .proj-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--dark);
+    font-family: 'Playfair Display', serif;
+  }
+
+  .proj-badges { display: flex; gap: 4px; flex-wrap: wrap; }
+
+  .badge {
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: 600;
+  }
+
+  .badge-teal   { background: #E1F5EE; color: #085041; border: 1px solid #9FE1CB; }
+  .badge-blue   { background: #E6F1FB; color: #0C447C; border: 1px solid #B5D4F4; }
+  .badge-amber  { background: #FAEEDA; color: #633806; border: 1px solid #FAC775; }
+  .badge-pink   { background: #FBEAF0; color: #72243E; border: 1px solid #F4C0D1; }
+
+  .proj-desc {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    line-height: 1.5;
+    padding-left: 4px;
+  }
+
+  .proj-bullets { list-style: none; padding: 0; }
+
+  .proj-bullets li {
+    font-size: 11px;
+    color: var(--dark);
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 3px;
+    line-height: 1.5;
+  }
+
+  .proj-bullets li::before {
+    content: "·";
+    position: absolute;
+    left: 4px;
+    color: var(--terracotta);
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  /* print */
+  @media print {
+    body { background: white; }
+    .page { padding: 28px 32px; }
+    .page::before, .page::after { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <div class="name-th">ขวัญนิภา กอบสุขถาวรกุล</div>
+      <div class="name-en">Khwannipha<br>Kobsuktawonkul</div>
+      <div class="title-pill">✦ 3D Artist · Stylized Character</div>
+      <div class="contact-grid">
+        <a class="contact-item" href="mailto:khwannipha.kob@gmail.com"><i class="ti ti-mail"></i>khwannipha.kob@gmail.com</a>
+        <span class="contact-item"><i class="ti ti-phone"></i>082-821-5933</span>
+        <span class="contact-item"><i class="ti ti-map-pin"></i>กรุงเทพฯ บางเขน</span>
+        <a class="contact-item" href="https://khwannipha.github.io/Portfolio/"><i class="ti ti-world"></i>khwannipha.github.io/Portfolio</a>
+      </div>
+    </div>
+    <div class="header-seek">
+      <div class="seek-badge"><i class="ti ti-briefcase"></i>Internship ด้าน 3D Character Art</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- LEFT -->
+    <div class="left-col">
+
+      <div class="section-label">การศึกษา</div>
+      <div class="edu-block">
+        <div class="edu-school">มหาวิทยาลัยศรีปทุม</div>
+        <div class="edu-sub">คณะดิจิทัลมีเดีย<br>การออกแบบอินเทอร์แอคทีฟและเกม</div>
+        <div class="edu-year">พ.ศ. 2566 – 2568 (ปี 3)</div>
+      </div>
+
+      <div class="section-label">ทักษะด้าน 3D</div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">3D Modeling & Sculpting</div>
+        <div class="skill-tags">
+          <span class="tag">Autodesk Maya</span>
+          <span class="tag">ZBrush</span>
+          <span class="tag">Nomad Sculpt</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Texturing & Pipeline</div>
+        <div class="skill-tags">
+          <span class="tag">Substance 3D Painter</span>
+          <span class="tag">UV Unwrap</span>
+          <span class="tag">Retopology</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Rigging & Animation</div>
+        <div class="skill-tags">
+          <span class="tag">Maya Rig</span>
+          <span class="tag">Basic Animation</span>
+        </div>
+      </div>
+      <div class="section-label">Soft Skills</div>
+      <div class="skill-tags">
+        <span class="tag">วิเคราะห์และแก้ปัญหา</span>
+        <span class="tag">ทำงานเป็นทีม</span>
+        <span class="tag">เรียนรู้รวดเร็ว</span>
+        <span class="tag">ความคิดสร้างสรรค์</span>
+        <span class="tag">รับ Feedback ได้ดี</span>
+      </div>
+
+      <div class="section-label">ภาษา</div>
+      <div class="lang-row"><span>ภาษาไทย</span><span class="lang-badge">ภาษาแม่</span></div>
+      <div class="lang-row"><span>ภาษาอังกฤษ</span><span class="lang-badge">ระดับพื้นฐาน</span></div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-col">
+
+      <div class="section-label" style="margin-top:0">เกี่ยวกับฉัน</div>
+      <div class="objective-box">
+        นักศึกษาชั้นปี 3 สาขาการออกแบบอินเทอร์แอคทีฟและเกม มหาวิทยาลัยศรีปทุม มีความถนัดด้าน Stylized 3D Character Art ตั้งแต่ขั้นตอน Concept และ Sculpting ด้วย Maya, ZBrush, Nomad Sculpt และ Substance 3D Painter มุ่งมั่นพัฒนาตัวเองสู่เส้นทาง Character Artist มืออาชีพในอุตสาหกรรมเกม
+      </div>
+
+      <div class="section-label">Full Pipeline</div>
+      <div class="pipeline-row">
+        <span class="pipe-step">Concept / Ref</span>
+        <span class="pipe-arrow">→</span>
+        <span class="pipe-step">High Poly Sculpt</span>
+        <span class="pipe-arrow">→</span>
+        <span class="pipe-step">Retopology</span>
+        <span class="pipe-arrow">→</span>
+        <span class="pipe-step">UV Unwrap</span>
+        <span class="pipe-arrow">→</span>
+        <span class="pipe-step">Texturing</span>
+        <span class="pipe-arrow">→</span>
+        <span class="pipe-step">Game-Ready Asset</span>
+      </div>
+
+      <div class="section-label">โปรเจกต์</div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <div class="proj-name">Green Dragon — Stylized Character</div>
+          <div class="proj-badges">
+            <span class="badge badge-blue">ZBrush · Maya · Substance</span>
+          </div>
+        </div>
+        <div class="proj-desc">ตัวละครมังกรสไตล์ Stylized </div>
+        <ul class="proj-bullets">
+          <li>Sculpt ด้วย ZBrush → Retopology → UV Unwrap → Texture ใน Substance 3D Painter</li>
+          <li>Low Poly Game-Ready: ~4,600 Tris พร้อมใช้งานใน Game Engine</li>
+          <li>ปรับ Material และโทนสีให้ตรงกับ Stylized Style ที่ออกแบบไว้</li>
+        </ul>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <div class="proj-name">Monster — ZBrush Sculpt to Game Asset</div>
+          <div class="proj-badges">
+            <span class="badge badge-blue">ZBrush · Maya · Substance</span>
+          </div>
+        </div>
+        <div class="proj-desc">ปั้นโมเดลมอนสเตอร์จาก Concept Art </div>
+        <ul class="proj-bullets">
+          <li>Sculpt รายละเอียดพื้นผิวจาก Concept Art ด้วย ZBrush</li>
+          <li>Low Poly Game-Ready: ~5,000 Tris พร้อม UV Unwrap และ Texture Painting</li>
+        </ul>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <div class="proj-name">Gacha Egg Chicken — Rigged Character</div>
+          <div class="proj-badges">
+            <span class="badge badge-amber">Rigged</span>
+            <span class="badge badge-blue">Maya · Animation</span>
+          </div>
+        </div>
+        <div class="proj-desc">Original Design ตู้กาชารูปแม่ไก่ สร้างโมเดล Rig และ Animation ด้วย Maya</div>
+        <ul class="proj-bullets">
+          <li>ออกแบบตัวละคร Original Design ตั้งแต่ต้น → สร้างโมเดล → Rig → Animation</li>
+          <li>มี Turntable Video แสดง Animation การทำงานของตู้กาชา</li>
+        </ul>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <div class="proj-name">Pink Dragon & Chibi Girl — Stylized Sculpt</div>
+          <div class="proj-badges">
+            <span class="badge badge-pink">High Poly</span>
+            <span class="badge badge-blue">Nomad Sculpt</span>
+          </div>
+        </div>
+        <div class="proj-desc">ตัวละคร Stylized สำหรับฝึกทักษะ Character Design และ Sculpting</div>
+        <ul class="proj-bullets">
+          <li>ฝึก Silhouette, สัดส่วน Chibi และ Character Design จาก Character Sheet</li>
+          <li>ออกแบบโทนสี พื้นผิว และรายละเอียดให้สอดคล้องกับ Stylized Style</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
